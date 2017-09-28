@@ -5,7 +5,7 @@ export const types = {
 
 export function getCity(city) {
     return {
-        type: types.GET_USER_INPUT,
+        type: types.GET_CITY,
         payload: { city }
     }
 }

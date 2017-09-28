@@ -7,11 +7,12 @@ export default class currentWeather extends React.Component {
 
 
     render() {
+        const { city } = this.props
         return (
             <div style={{ padding: 0 + 'px', marginRight: 40 + 'px', }} className="card col-sm-6">
                 <h3 style={{ alignContent: 'center', textAlign: 'center' }} className="card-header">City Information</h3>
                 <div className="card-block">
-                    <h4 style={{ textAlign: 'center' }} className="card-title">city img</h4>
+                    <h4 style={{ textAlign: 'center' }} className="card-title">{city}</h4>
                 </div>
                 <div style={{ alignContent: "center" }} className="container">
                     <div style={{ alignContent: "center" }} className="row">

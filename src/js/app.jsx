@@ -1,6 +1,6 @@
 import React from 'react';
 
-import WeatherSearch from '../components/weatherSearch/weatherSearch'
+import WeatherSearch from '../components/weatherSearch/index'
 
 import CurrentWeather from '../components/currentWeather/currentWeather'
 

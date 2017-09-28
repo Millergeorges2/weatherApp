@@ -1,13 +1,26 @@
 import React from 'react';
 
-import { getcity } from './weatherSearchActions'
+import { getCity } from './weatherSearchActions'
 
 export default class weatherSearch extends React.Component {
     constructor(props) {
         super(props);
         //bind here
+        this.handleWeatherInput = this.handleWeatherInput.bind(this);
     }
 
+
+    handleWeatherInput(event){
+        //this.props.dispatch passed in through
+        //the connect, gives access to actions in the 
+        //weatherSearch actions
+        const { dispatch } = this.props;
+
+        const { value } = event.target;
+        //passes value to get city in the actions
+        dispatch(getCity(value));
+
+    }
 
     render() {
         return (
@@ -19,7 +32,7 @@ export default class weatherSearch extends React.Component {
                 <button className="btn btn-primary">Tokyo</button>
 
                 <div style={{ marginBottom: 20 + 'px' }} className="input-group">
-                    <input type="text" className="form-control" placeholder="Username" aria-describedby="sizing-addon2" />
+                    <input onChange={this.handleWeatherInput} type="text" className="form-control" placeholder="Username" aria-describedby="sizing-addon2" />
                     <span className="input-group-addon" id="sizing-addon2">GO!</span>
                 </div>
             </div>

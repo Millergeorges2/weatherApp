@@ -1,10 +1,10 @@
 import { types } from './weatherSearchActions';
 
-const defaultState = {
+const initialState = {
     city: ''
 };
 
-export default function weatherSearchReducer(state = defaultState, action) {
+export default function weatherSearchReducer(state = initialState, action) {
     const { type, payload } = action;
 
     switch (type) {
@@ -12,9 +12,12 @@ export default function weatherSearchReducer(state = defaultState, action) {
             return {
                 ...state,
                 city: payload.city
-            }
+            };
         }
 
+        default: {
+            return state;
+        }
     }
 
 
