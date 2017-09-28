@@ -1,7 +1,13 @@
 import { types } from './weatherSearchActions';
 
 const initialState = {
-    city: ''
+    city: '',
+    temperature: '',
+    pressure: '',
+    humidity: '',
+    lowTemp: '',
+    highTemp: '',
+    windSpeed: ''
 };
 
 export default function weatherSearchReducer(state = initialState, action) {
@@ -12,6 +18,11 @@ export default function weatherSearchReducer(state = initialState, action) {
             return {
                 ...state,
                 city: payload.city
+            };
+        }
+        case types.GET_WEATHER: {
+            return{
+               state
             };
         }
 
