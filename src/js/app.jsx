@@ -2,9 +2,9 @@ import React from 'react';
 
 import WeatherSearch from '../components/weatherSearch/index'
 
-import CurrentWeather from '../components/currentWeather/currentWeather'
+import CurrentWeather from '../components/currentWeather'
 
-import HistoryDisplay from '../components/historyDisplay/historyDisplay'
+import HistoryDisplay from '../components/historyDisplay/index'
 
 export default class App extends React.Component {
   render() {
