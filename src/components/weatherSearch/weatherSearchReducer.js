@@ -35,8 +35,7 @@ export default function weatherSearchReducer(state = initialState, action) {
                 city: payload.city
             };
         }
-        case types.GET_WEATHER: {
-            if(payload)
+        case 'GET_WEATHER_FULFILLED': {
             return{
                ...state,
                temperature: payload.main.temp,
@@ -44,7 +43,8 @@ export default function weatherSearchReducer(state = initialState, action) {
                humidity: payload.main.humidity,
                lowTemp: payload.main.temp_min,
                highTemp: payload.main.temp_max,
-               windSpeed: payload.wind.speed
+               windSpeed: payload.wind.speed,
+               icon: payload.weather[0].icon
             };
         }
 
